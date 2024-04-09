@@ -1,5 +1,6 @@
 {
   "name": "tstypecolorpreview",
+  "publisher": "rodsarhan",
   "displayName": "TS Type Color Preview",
   "description": "Preview the colors of Typescript string literals that correspond to a color value",
   "version": "0.0.1",
