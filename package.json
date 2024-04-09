@@ -4,7 +4,7 @@
   "description": "Preview the colors of Typescript string literals that correspond to a color value",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.87.0"
+    "vscode": "^1.44.0"
   },
   "categories": [
     "Other"
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "@types/vscode": "^1.88.0",
+    "@types/vscode": "^1.44.0",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
     "@vscode/test-cli": "^0.0.8",
