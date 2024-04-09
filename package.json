@@ -1,7 +1,7 @@
 {
   "name": "tstypecolorpreview",
   "displayName": "TS Type Color Preview",
-  "description": "",
+  "description": "Preview the colors of Typescript string literals that correspond to a color value",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
