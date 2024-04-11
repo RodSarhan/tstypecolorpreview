@@ -1,14 +1,20 @@
 {
   "name": "tstypecolorpreview",
   "publisher": "rodsarhan",
+  "license": "MIT",
   "displayName": "TS Type Color Preview",
   "description": "Preview the colors of Typescript string literals that correspond to a color value",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.44.0"
   },
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/RodSarhan/tstypecolorpreview"
+	},
   "categories": [
-    "Other"
+    "Other",
+    "Visualization"
   ],
   "activationEvents": [
     "onStartupFinished"

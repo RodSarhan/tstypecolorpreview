@@ -1,62 +1,32 @@
 import * as vscode from "vscode";
-import * as ts from "typescript";
-import { prettifyType } from "./prettify-type";
-import { EXTENSION_ID, MARKDOWN_MAX_LENGTH } from "./consts";
-import { getProject } from "./project-cache";
-import { washString } from "./helpers";
+import { getStringLiteralTypes } from "./get-string-literal-types";
+
+const hexRegex = /^#[0-9A-F]{6}[0-9a-f]{0,2}$/i;
 
 export function registerHoverProvider(context: vscode.ExtensionContext): void {
     async function provideHover(
         document: vscode.TextDocument,
         position: vscode.Position
     ): Promise<vscode.Hover | undefined> {
-        // const config = vscode.workspace.getConfiguration(EXTENSION_ID);
-        // const enableHover = config.get("enableHover", true);
-
-        // if (!enableHover) {
-        //     await Promise.resolve(undefined);
-        //     return;
-        // }
-
         const content = document.getText();
         const offset = document.offsetAt(position);
         const fileName = document.fileName;
 
-        return await prettifyType(fileName, content, offset).then(
-            (typeString) => {
-                if (typeString === undefined) return undefined;
-                // let finalArray = [];
-                // vscode.window.showInformationMessage(typeString);
-                let regularExpression = /#(?:[0-9a-fA-F]{3}){1,2}/g; // btw: this is the same as writing RegExp(/#(?:[0-9a-fA-F]{3}){1,2}/, 'g')
-                let extractedHexCodes = typeString.match(regularExpression);
-                if (!extractedHexCodes || extractedHexCodes.length > 5) {
-                    return undefined;
-                }
-                // vscode.window.showInformationMessage(finalArray.toString());
-                // Ignore hover if the type is already displayed from TS quick info
-                // if (
-                //     typeString.startsWith("type") ||
-                //     typeString.startsWith("const")
-                // ) {
-                //     const project = getProject(fileName);
-                //     const languageService =
-                //         project.getLanguageService().compilerObject;
-                //     const quickInfo = languageService.getQuickInfoAtPosition(
-                //         fileName,
-                //         offset
-                //     );
-                //     const quickInfoText = ts.displayPartsToString(
-                //         quickInfo?.displayParts
-                //     );
+        return await getStringLiteralTypes(fileName, content, offset).then(
+            (typeStrings) => {
+                if (typeStrings === undefined) return undefined;
+                const colorsListAsHex: { name: string; hexValue: string }[] =
+                    [];
 
-                //     if (
-                //         washString(quickInfoText).includes(
-                //             washString(typeString)
-                //         )
-                //     ) {
-                //         return undefined;
-                //     }
-                // }
+                for (const typeString of typeStrings) {
+                    if (hexRegex.test(typeString)) {
+                        colorsListAsHex.push({
+                            name: typeString,
+                            hexValue: typeString,
+                        });
+                        continue;
+                    }
+                }
 
                 // if (typeString.length > MARKDOWN_MAX_LENGTH) {
                 //     typeString =
@@ -65,10 +35,14 @@ export function registerHoverProvider(context: vscode.ExtensionContext): void {
 
                 const hoverText = new vscode.MarkdownString();
                 // hoverText.appendCodeblock(typeString, document.languageId);
-                for (const item of extractedHexCodes) {
-                    hoverText.appendMarkdown(`<span>${item}:</span>&nbsp; `);
+                for (const item of colorsListAsHex) {
                     hoverText.appendMarkdown(
-                        `<span style="color:${item};background-color:${item};">${"I I"}</span><br>`
+                        `<span>${item.name}:</span>&nbsp; `
+                    );
+                    hoverText.appendMarkdown(
+                        `<span style="color:${item.hexValue};background-color:${
+                            item.hexValue
+                        };">${"I I"}</span><br>`
                     );
                 }
                 hoverText.supportHtml = true;
