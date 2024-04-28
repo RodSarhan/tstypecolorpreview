@@ -1,6 +1,6 @@
 # TS Type Color Preview
 
-This extension allows previewing the colors of typescript string literals that correspond to color values
+This extension allows previewing the colors of typescript types and union types that correspond to color values
 
 ## Features
 
@@ -8,16 +8,16 @@ Hover on a variable with a color value as its type to see a preview of the possi
 
 ### Before
 
-![type before 1](https://i.imgur.com/yFDN5GP.png)
-![hover before 1](https://i.imgur.com/vxKtHWg.png)
+![type before 1](./assets/type-before-1.png)
+![hover before 1](./assets/hover-before-1.png)
 
-![type before 2](https://i.imgur.com/Fz9Gb68.png)
-![hover before 2](https://i.imgur.com/AW5c5pK.png)
+![type before 2](./assets/type-before-2.png)
+![hover before 2](./assets/hover-before-2.png)
 
 ### After
 
-![hover after 1](https://i.imgur.com/cUfIzyW.png)
-![hover after 2](https://i.imgur.com/xJDzoIc.png)
+![hover after 1](./assets/hover-after-1.png)
+![hover after 2](./assets/hover-after-2.png)
 
 ## Notes
 
@@ -30,17 +30,13 @@ This extension was inteded for my own uses and is essentially just a proof of co
 
 ## Release Notes
 
-### 0.0.3
+### 0.0.4
 
 Better representation of treansparent colors
 
-### 0.0.2
-
-Performance enhancements
-
 ### 0.0.1
 
-Initial experimental release
+Initial release
 
 ---
 
