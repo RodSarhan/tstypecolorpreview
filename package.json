@@ -5,7 +5,7 @@
   "displayName": "TS Type Color Preview",
   "description": "Preview the colors of Typescript types and union types that correspond to a color value",
   "icon": "assets/logo.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.44.0"
   },
