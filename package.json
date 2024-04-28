@@ -4,7 +4,7 @@
   "license": "MIT",
   "displayName": "TS Type Color Preview",
   "description": "Preview the colors of Typescript string literals that correspond to a color value",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.44.0"
   },
