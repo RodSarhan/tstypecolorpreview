@@ -37,14 +37,14 @@ export function registerHoverProvider(context: vscode.ExtensionContext): void {
                 // hoverText.appendCodeblock(typeString, document.languageId);
                 for (const item of colorsListAsHex) {
                     hoverText.appendMarkdown(
-                        `<span>${item.name}:</span>&nbsp; `
-                    );
-                    hoverText.appendMarkdown(
-                        `<span style="color:${item.hexValue};background-color:${
+                        `<span>${item.name}:</span>&nbsp; <span style="color:${
                             item.hexValue
-                        };">${"I I"}</span><br>`
+                        };background-color:${
+                            item.hexValue
+                        };">${"&nbsp; &nbsp; &nbsp;"}</span><br>`
                     );
                 }
+                // square "&#9724;"
                 hoverText.supportHtml = true;
 
                 return new vscode.Hover(hoverText);
