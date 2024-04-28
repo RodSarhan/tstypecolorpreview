@@ -4,7 +4,7 @@
   "license": "MIT",
   "displayName": "TS Type Color Preview",
   "description": "Preview the colors of Typescript types and union types that correspond to a color value",
-  "assets": "images/logo.png",
+  "assets": "assets/logo.png",
   "version": "0.0.4",
   "engines": {
     "vscode": "^1.44.0"
