@@ -32,7 +32,7 @@ This extension was inteded for my own uses and is essentially just a proof of co
 
 ### 0.0.4
 
-Better representation of treansparent colors
+Better representation of transparent colors
 
 ### 0.0.1
 
