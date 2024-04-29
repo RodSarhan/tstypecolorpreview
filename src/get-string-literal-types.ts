@@ -1,5 +1,4 @@
-import { SyntaxKind, ts } from "ts-morph";
-// import * as vscode from "vscode";
+import { SyntaxKind } from "ts-morph";
 import { getProject } from "./project-cache";
 
 export async function getStringLiteralTypes(
@@ -19,17 +18,11 @@ export async function getStringLiteralTypes(
     const nodeKind = node.getKind();
     if (nodeKind !== SyntaxKind.Identifier) return;
 
-    const parentNode = node.getParent();
-    if (parentNode === undefined) return;
-
-    const parentNodeKind = parentNode.getKind();
-
-    const nodeText = node.getText();
-
     const typeChecker = project.getTypeChecker();
     const type = typeChecker.getTypeAtLocation(node);
 
     const stringLiteralTypes: string[] = [];
+
     if (type.isUnion()) {
         type.getUnionTypes().forEach((unionType) => {
             if (unionType.isStringLiteral()) {
@@ -39,6 +32,7 @@ export async function getStringLiteralTypes(
             }
         });
     }
+
     if (type.isStringLiteral()) {
         stringLiteralTypes.push(type.getText().replaceAll('"', ""));
     }

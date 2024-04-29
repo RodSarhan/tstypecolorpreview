@@ -12,44 +12,42 @@ export function registerHoverProvider(context: vscode.ExtensionContext): void {
         const offset = document.offsetAt(position);
         const fileName = document.fileName;
 
-        return await getStringLiteralTypes(fileName, content, offset).then(
-            (typeStrings) => {
-                if (typeStrings === undefined) return undefined;
-                const colorsListAsHex: { name: string; hexValue: string }[] =
-                    [];
-
-                for (const typeString of typeStrings) {
-                    if (hexRegex.test(typeString)) {
-                        colorsListAsHex.push({
-                            name: typeString,
-                            hexValue: typeString,
-                        });
-                        continue;
-                    }
-                }
-
-                // if (typeString.length > MARKDOWN_MAX_LENGTH) {
-                //     typeString =
-                //         typeString.substring(0, MARKDOWN_MAX_LENGTH) + "...";
-                // }
-
-                const hoverText = new vscode.MarkdownString();
-                // hoverText.appendCodeblock(typeString, document.languageId);
-                for (const item of colorsListAsHex) {
-                    hoverText.appendMarkdown(
-                        `<span>${item.name}:</span>&nbsp; <span style="color:${
-                            item.hexValue
-                        };background-color:${
-                            item.hexValue
-                        };">${"&nbsp; &nbsp; &nbsp;"}</span><br>`
-                    );
-                }
-                // square "&#9724;"
-                hoverText.supportHtml = true;
-
-                return new vscode.Hover(hoverText);
-            }
+        const typeStrings = await getStringLiteralTypes(
+            fileName,
+            content,
+            offset
         );
+
+        if (typeStrings === undefined) return undefined;
+
+        const colorsListAsHex: { name: string; hexValue: string }[] = [];
+
+        for (const typeString of typeStrings) {
+            if (hexRegex.test(typeString)) {
+                colorsListAsHex.push({
+                    name: typeString,
+                    hexValue: typeString,
+                });
+                // will implement checking for other color formats in the future
+                continue;
+            }
+        }
+
+        const hoverText = new vscode.MarkdownString();
+
+        for (const color of colorsListAsHex) {
+            hoverText.appendMarkdown(
+                `<span>${color.name}:</span>&nbsp; <span style="color:${
+                    color.hexValue
+                };background-color:${
+                    color.hexValue
+                };">${"&nbsp; &nbsp; &nbsp;"}</span><br>`
+            );
+        }
+        // square "&#9724;"
+        hoverText.supportHtml = true;
+
+        return new vscode.Hover(hoverText);
     }
 
     context.subscriptions.push(
