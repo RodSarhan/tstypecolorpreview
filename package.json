@@ -14,7 +14,7 @@
     "react-native"
   ],
   "icon": "assets/logo.png",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.44.0"
   },
