@@ -21,14 +21,17 @@ Hover on a variable with a color value as its type to see a preview of the possi
 
 ## Notes
 
-This extension was inteded for my own uses and is essentially just a proof of concept for now, but I'm planning to support other color formats in the near future and enhance the caching behavior.
+This extension was inteded for my own use, if you notice any issues feel free to suggest a fix or open a PR.
 
 ## Known Issues
 
-- Currently only works with Hex values (#FFFFFF) (#FFF) (#FFFFFFAA).
-- Types originating files other than the active one might be cached and not up to date with the latest changes.
+- Types originating files other than the active one might be cached and not up to date with the latest changes. This can be fixed by quickly hovering on something in the original file.
 
 ## Release Notes
+
+### 0.0.6
+
+Now supports most color formats
 
 ### 0.0.4
 
