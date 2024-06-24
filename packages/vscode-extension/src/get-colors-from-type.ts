@@ -25,7 +25,6 @@ type ColorObject = {
  */
 export function getColorsFromType (typeTree: TypeTree): ColorObject[] | undefined {
   const colorsList: ColorObject[] = []
-  console.log('typeTree', typeTree)
 
   if (typeTree.kind === 'union') {
     typeTree.types.forEach((type) => {
