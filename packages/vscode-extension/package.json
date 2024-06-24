@@ -21,7 +21,6 @@
     "react native",
     "react-native"
   ],
-  "preview": true,
   "icon": "assets/logo.png",
   "repository": {
     "type": "git",
