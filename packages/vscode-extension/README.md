@@ -1,6 +1,7 @@
 # TS Type Color Preview
 
-[![Installs](https://img.shields.io/vscode-marketplace/d/rodsarhan.tstypecolorpreview.svg)](https://marketplace.visualstudio.com/items?itemName=rodsarhan.tstypecolorpreview) [![GitHub Repo stars](https://img.shields.io/github/stars/RodSarhan/tstypecolorpreview?style=social)](https://github.com/RodSarhan/tstypecolorpreview) [![Marketplace](https://img.shields.io/vscode-marketplace/v/rodsarhan.tstypecolorpreview.svg)](https://marketplace.visualstudio.com/items?itemName=rodsarhan.tstypecolorpreview) [![License](https://img.shields.io/github/license/mylesmmurphy/prettify-ts)](https://github.com/mylesmmurphy/prettify-ts/blob/main/LICENSE)
+[![Installs](https://img.shields.io/visual-studio-marketplace/d/rodsarhan.tstypecolorpreview)](https://marketplace.visualstudio.com/items?itemName=rodsarhan.tstypecolorpreview) [![GitHub Repo stars](https://img.shields.io/github/stars/RodSarhan/tstypecolorpreview?style=social)](https://github.com/RodSarhan/tstypecolorpreview) [![Marketplace](https://img.shields.io/visual-studio-marketplace/v/rodsarhan.tstypecolorpreview.svg)](https://marketplace.visualstudio.com/items?itemName=rodsarhan.tstypecolorpreview) [![License](https://img.shields.io/github/license/mylesmmurphy/prettify-ts)](https://github.com/mylesmmurphy/prettify-ts/blob/main/LICENSE)
+
 
 This extension allows previewing the colors of typescript types and union types that correspond to color values
 
