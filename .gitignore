@@ -1,5 +1,22 @@
+# Ignore node_modules directory
+node_modules/
+packages/*/node_modules/
+
+# Ignore IDE and editor files
+.idea/
+*.iml
+
+# Ignore logs
+*.log
+
+# Ignore OS generated files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Build
 out
-dist
-node_modules
-.vscode-test/
+packages/*/out
+
+# Package Files
 *.vsix
