@@ -1,0 +1,69 @@
+{
+  "name": "tstypecolorpreview",
+  "publisher": "rodsarhan",
+  "license": "MIT",
+  "private": true,
+  "version": "0.2.1",
+  "main": "./out/extension.js",
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  },
+  "displayName": "TS Type Color Preview",
+  "description": "Preview the colors of Typescript types and union types that correspond to a color value",
+  "keywords": [
+    "react",
+    "typescript",
+    "color",
+    "preview",
+    "type",
+    "react native",
+    "react-native"
+  ],
+  "icon": "assets/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodSarhan/tstypecolorpreview"
+  },
+  "categories": [
+    "Other",
+    "Visualization",
+    "Programming Languages"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "esbuild": "esbuild ./src/extension.ts --bundle --minify --sourcemap --outfile=out/extension.js --external:vscode --external:src/prism --format=cjs --platform=node",
+    "vscode:prepublish": "yarn run esbuild",
+    "package": "vsce package --yarn --dependencies"
+  },
+  "devDependencies": {
+    "@types/culori": "^2.1.0",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.44.0",
+    "esbuild": "^0.19.10"
+  },
+  "dependencies": {
+    "culori": "^4.0.1",
+    "@tstypecolorpreview/typescript-plugin": "*",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "vscode": "^1.44.0"
+  },
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "contributes": {
+    "typescriptServerPlugins": [
+      {
+        "name": "@tstypecolorpreview/typescript-plugin",
+        "enableForWorkspaceTypeScriptVersions": true
+      }
+    ]
+  }
+}
