@@ -21,7 +21,7 @@ type ColorObject = {
  * Example:
  * { kind: 'union', types: [{ kind: 'string-literal', type: '"#000000"' }, { kind: 'string-literal', type: '"#FFFFFF"' }] }
  * Yields:
- * 'string | number'
+ * ColorObject
  */
 export function getColorsFromType (typeTree: TypeTree): ColorObject[] | undefined {
   const colorsList: ColorObject[] = []
