@@ -8,18 +8,11 @@ This extension allows previewing the colors of typescript types and union types 
 
 Hover on a variable with a color value as its type to see a preview of the possible colors
 
-### Before
+### Examples
 
-![type before 1](./assets/type-before-1.png)
-![hover before 1](./assets/hover-before-1.png)
+![example 1](./assets/example-1.png)
 
-![type before 2](./assets/type-before-2.png)
-![hover before 2](./assets/hover-before-2.png)
-
-### After
-
-![hover after 1](./assets/hover-after-1.png)
-![hover after 2](./assets/hover-after-2.png)
+![example 2](./assets/example-2.png)
 
 ## Notes
 
