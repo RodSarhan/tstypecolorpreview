@@ -2,7 +2,7 @@
   "name": "ts-type-color-preview-monorepo",
   "publisher": "rodsarhan",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "workspaces": {
     "packages": ["packages/*"]
