@@ -11,7 +11,7 @@
     ]
   },
   "displayName": "TS Type Color Preview",
-  "description": "Preview the colors of Typescript types and union types that correspond to a color value",
+  "description": "Preview the colors of Typescript types and variables that correspond to a color value",
   "keywords": [
     "react",
     "typescript",
