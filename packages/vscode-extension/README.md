@@ -51,6 +51,16 @@ Or simply follow the link at the top of the repo
 code --install-extension rodsarhan.tstypecolorpreview
 ```
 
+### Links
+
+Microsoft VS Code Marketplace:
+
+[https://marketplace.visualstudio.com/items?itemName=rodsarhan.tstypecolorpreview](https://marketplace.visualstudio.com/items?itemName=rodsarhan.tstypecolorpreview)
+
+Open VSX:
+
+[https://open-vsx.org/extension/rodsarhan/tstypecolorpreview](https://open-vsx.org/extension/rodsarhan/tstypecolorpreview)
+
 ## 🔧 Requirements
 
 - TypeScript project
